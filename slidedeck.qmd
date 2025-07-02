@@ -52,13 +52,13 @@ Palaeo data come in many forms
 * counts
 * %
 * biomass
-* concentration
+* concentrations
 * Presence or absence (?)
 * presence only?
 
 . . .
 
-Where we've sampled almost surely is not [random]{.highlight}
+Where we've sampled almost surely is not [random]{.highlight} --- [convenience sample]{.highlight}
 
 ## Why is this a problem?
 
