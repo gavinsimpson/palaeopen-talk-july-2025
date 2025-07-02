@@ -288,6 +288,12 @@ This is covered under the problem of [change of support]{.highlight} and the con
 
 [Source: Giphy]{.source}
 
+## Transfer functions
+
+Remember Steve Juggin's *Sick science* warning
+
+![](assets/20250702_1149_Robot Alert_simple_compose_01jz58m8vtew890w9xp9knxq3h.png){fig-align=center}
+
 # The future?
 
 ## Palaeopen 2.0
