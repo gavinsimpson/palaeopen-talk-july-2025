@@ -35,13 +35,13 @@ highlight-style: github-dark
 
 ## What does AI think?
 
-![](assets/20250701_2218_Vibrant Lake Ecosystem_simple_compose_01jz3t49e7e1crerb3jx24kmd1.png){fig-align=center}
+![](assets/20250701_2218_Vibrant Lake Ecosystem_simple_compose_01jz3t49e7e1crerb3jx24kmd1.png){fig-align="center"}
 
 [Source: Sora]{.source}
 
 ## ...but can we trust AI
 
-![](assets/20250701_2226_Palaeoecologist at Work_simple_compose_01jz3tm12jesv90jrqcjaj82ea.png){fig-align=center}
+![](assets/20250701_2226_Palaeoecologist at Work_simple_compose_01jz3tm12jesv90jrqcjaj82ea.png){fig-align="center"}
 
 [Source: Sora]{.source}
 
@@ -53,16 +53,13 @@ Palaeo data come in many forms
 * %
 * biomass
 * concentrations
-* Presence or absence (?)
+* presence / absence (?)
 * presence only?
+* whatever the heck metagenomics / metabarcoding produces
 
-. . .
+## Is this a problem?
 
-Where we've sampled almost surely is not [random]{.highlight} --- [convenience sample]{.highlight}
-
-## Why is this a problem?
-
-It isn't
+Probably not
 
 * in a single site study
 * in a curated study of selected sites
@@ -80,13 +77,19 @@ Even within a single proxy we have inconsistent data
 * everyone uses their own taxonomy
 * ...
 
+. . .
+
+Where we've sampled almost surely is not [random]{.highlight} --- [convenience sample]{.highlight}
+
+Almost surely [irregularly spaced in time]{.highlight}
+
 ## So much for old news...
 
 No one in this room needs to be told any of this
 
 ##
 
-![](assets/20250702_1047_TED Talk Appreciation_simple_compose_01jz552r4he0d8qzt8dk1m6w4k.png){fig-align=center}
+![](assets/20250702_1047_TED Talk Appreciation_simple_compose_01jz552r4he0d8qzt8dk1m6w4k.png){fig-align="center"}
 
 [Source: Sora]{.source}
 
@@ -98,7 +101,7 @@ What I want to talk about is how do you bring these data together to answer our 
 
 :::
 
-## What do we want to do with them?
+## What do we want to do?
 
 Themes from the website
 
@@ -117,11 +120,27 @@ Traditional methods used in palaeo are unlikely to help with analyses that compa
 
 * coinertia / cocorrespondence analysis --- pairs of data
 
-What do we do if we have different resolution data within a proxy? Or different data representations?
+What do we do if we have different resolution data within a proxy?
+
+Or different data representations?
+
+Or different proxies at different sites / samples
 
 . . .
 
 [Can we use all the data?]{.highlight}
+
+## Maslow's hammer
+
+![](assets/20250702_1358_Red Toolbox, Only Hammers_simple_compose_01jz5fzt27ev69aca2pf5y1rae.png){fig-align="center"}
+
+[Source: Sora]{.source}
+
+::: {.notes}
+
+If the only tool in your toolbox is a hammer, every problem looks like a nail
+
+:::
 
 ## Newer methods
 
@@ -131,9 +150,11 @@ Lots of developments in the statistical ecology and omics worlds we can take adv
 
 * joint species distribution models
 
-* Model-based ordination
+* model-based ordination
 
-* Copula models (marginal models for multivariate responses)
+* copula models (marginal models for multivariate responses)
+
+* graphical models & networks
 
 * ...
 
@@ -163,7 +184,7 @@ Random process generating points, described by the local intensity $\lambda_{s}$
 
 $\lambda_{s}$ --- expected density of points at spatial location $s$
 
-If points are random, independent and follow a Poisson distribution with mean $\lambda_{s}$, homogeneous Poisson process ($\lambda_{s} \; \forall \; s$)
+If points are random, independent and follow a Poisson distribution with mean $\lambda_{s}$, homogeneous Poisson process ($\lambda_{s} = \lambda \; \forall \; s$)
 
 If $\lambda_{s}$ varies across $s$, we have an *inhomogeneous* Poisson process
 
@@ -218,14 +239,22 @@ Instead of modelling one species at a time and stacking the models, Joint Specie
 
 Ideally we'd combine integrated SDMs with JSDMs but as yet, I'm not aware of anything
 
-JSDMs can be used to fit model-based ordinations --- might hae to move away from traditional ordination methods to handle features of the data properly
+JSDMs can be used to fit model-based ordinations --- might have to move away from traditional ordination methods to handle features of our data properly
 
 * gllvm
 * ecoCopula
 * boral
 * [mvgam]{.highlight}
 
+::: {.notes}
+
+Also, these newer methods can answer different ecological questions where traditional methods might not
+
+:::
+
 ## Diversity
+
+Diversity metrics are very non-Gaussian
 
 Any modelling of ["diversity"]{.highlight} needs to handle the sediment accumulation problem
 
@@ -237,6 +266,8 @@ Time averaging different amounts of time per sample leads to
 . . . 
 
 Same problem affects any modelling of any palaeo data, save for annually laminated records...
+
+Effort problems plague "microbiome"-type data
 
 ## Diversity
 
@@ -251,20 +282,6 @@ Hierarchical models involving random "effects" allow us to [borrow strength]{.hi
 > Sharma *et al* (in press). No species left behind: borrowing strength to 
 > map data-deficient species. *Trends Ecol. Evol.* 
 > [10.1016/j.tree.2025.04.010](https://doi.org/10.1016/j.tree.2025.04.010)
-
-## What if we can't?
-
-If we can't / don't want to use these newer methods, what can we do with dissimilarities?
-
-Fused dissimilarities
-
-* compute dissimilarity among samples for a single proxy / type of data separately
-* compute the fused dissimilarity
-$$d_{\text{fused}_{jk}} = w d_{x_{jk}}  + (1 - w)d_{y_{jk}}$$
-* extends to $\mathcal{N}$ different data sets 
-$$d_{\text{fused}_{jk}} = \sum_{i = 1}^{\mathcal{N}} w_i d_{i_{jk}}, \;\; \text{where} \sum_{i=1}^{\mathcal{N}} w_i = 1$$
-
-Then analyse using NMDS or db-RDA, etc.
 
 ## Omics
 
@@ -284,15 +301,39 @@ This is covered under the problem of [change of support]{.highlight} and the con
 
 ## 
 
-![](assets/Wizard Of Oz Quote GIF by Top 100 Movie Quotes of All Time.gif){fig-align=center}
+![](assets/Wizard Of Oz Quote GIF by Top 100 Movie Quotes of All Time.gif){fig-align="center"}
 
 [Source: Giphy]{.source}
+
+::: {.notes}
+
+I fully appreciate that much if not all of this will be gobbledygook to most of you
+
+Work with statistical ecologists --- they've solved many of these issues
+
+Ignoring the problems is not an option if we want to do sound, reproducible science
+
+:::
+
+## What if we can't?
+
+If we can't / don't want to use these newer methods, what can we do with dissimilarities?
+
+Fused dissimilarities
+
+* compute dissimilarity among samples for a single proxy / type of data separately
+* compute the fused dissimilarity
+$$d_{\text{fused}_{jk}} = w d_{x_{jk}}  + (1 - w)d_{y_{jk}}$$
+* extends to $\mathcal{N}$ different data sets 
+$$d_{\text{fused}_{jk}} = \sum_{i = 1}^{\mathcal{N}} w_i d_{i_{jk}}, \;\; \text{where} \sum_{i=1}^{\mathcal{N}} w_i = 1$$
+
+Then analyse using NMDS or db-RDA, etc.
 
 ## Transfer functions
 
 Remember Steve Juggins' *Sick science* warning
 
-![](assets/20250702_1149_Robot Alert_simple_compose_01jz58m8vtew890w9xp9knxq3h.png){fig-align=center}
+![](assets/20250702_1149_Robot Alert_simple_compose_01jz58m8vtew890w9xp9knxq3h.png){fig-align="center"}
 
 # The future?
 
@@ -334,7 +375,7 @@ As we progress through Palaeopen, think about
 
 * what "future you" would've liked palaeoecologists of the past to have done
 
-* how would that change our field?
+* how would that change our field today?
 
 ## What would you change?
 
@@ -348,4 +389,4 @@ As we progress through Palaeopen, think about
 
 ## Thank you
 
-![](assets/qr-code.png){fig-align=center}
+![](assets/qr-code.png){fig-align="center"}
