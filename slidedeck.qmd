@@ -337,3 +337,4 @@ As we progress through Palaeopen, think about
 
 ## Thank you
 
+![](assets/qr-code.png){fig-align=center}
