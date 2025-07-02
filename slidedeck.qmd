@@ -244,12 +244,13 @@ Rare or data-deficient species?
 
 Large training sets --- throw out rare species, singletons etc
 
-eDNA --- "filtering" throws away a lot of data (please don't rarefy to counts)
+eDNA --- "filtering" throws away a lot of data (& please don't rarefy to counts)
 
 Hierarchical models involving random "effects" allow us to [borrow strength]{.highlight} from more data-rich taxa
 
-Sharma *et al* (2025). No species left behind: borrowing strength to map data-deficient species. Trends Ecol. Evol. [10.1016/j.tree.2025.04.010](https://doi.org/10.1016/j.tree.2025.04.010)
-
+> Sharma *et al* (in press). No species left behind: borrowing strength to 
+> map data-deficient species. *Trends Ecol. Evol.* 
+> [10.1016/j.tree.2025.04.010](https://doi.org/10.1016/j.tree.2025.04.010)
 
 ## What if we can't?
 
